@@ -15,13 +15,13 @@ public class Main {
         try {
             HashMap<String, Object> map = new HashMap<>();
             //json
-            Person person1 = new Person("a", "b", "c", new Address("aaa", "bbb"));
+            Person person = new Person(new Value("Elon Musk",new Car("tesla","2018"), new Rocket("Falco 9", "87")));
             //json into temp object
-            Request request = new Request("set", "1", person1);
+            Request request = new Request("set", "1", person);
             //object into map
-            Person person2 = person1;
+            //Person person2 = person;
 
-            map.put("1", person2);
+            map.put("person", person);
             map.put("2", "hello");
             Object obj = map.get("1");
             //System.out.println(obj);
@@ -39,9 +39,12 @@ public class Main {
             Map<String, Object> map1 = mapper.readValue(new File("C:\\ClayingWithCode\\src\\main\\java\\db.json"), new TypeReference<Map<String, Object>>() {
             });
             //show map
-            System.out.println("Map from Jason file: " + map.get("1"));
-            System.out.println("Map from Jason file: " + map.get("2"));
+            System.out.println("Map from Jason file: " + map.get("person"));
 
+            Person newPerson = (Person) map.get("person");
+
+            System.out.println("only name from person: " + newPerson.getValue().getName());
+            System.out.println("only name from person: " + newPerson.getValue());
 
         } catch (IOException e) {
         }

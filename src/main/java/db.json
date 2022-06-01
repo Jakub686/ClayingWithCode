@@ -1,12 +1,16 @@
 {
-  "1" : {
-    "name" : "a",
-    "age" : "b",
-    "high" : "c",
-    "address" : {
-      "street" : "aaa",
-      "city" : "bbb"
+  "2" : "hello",
+  "person" : {
+    "value" : {
+      "name" : "Elon Musk",
+      "car" : {
+        "model" : "tesla",
+        "year" : "2018"
+      },
+      "rocket" : {
+        "name" : "Falco 9",
+        "launches" : "87"
+      }
     }
-  },
-  "2" : "hello"
+  }
 }
